@@ -138,7 +138,8 @@ const generalbedsSchema=new mongoose.Schema(
     district:{type:String},
     age:{type:Number},
     contactnumber:{type:Number},
-
+    charge:{type:String},
+bedtype:{type:String},
   }
 );
 const hospitalSchema = new mongoose.Schema(

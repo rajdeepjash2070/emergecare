@@ -189,7 +189,17 @@ router.put("/:id", upload.single("image"), async (req, res) => {
       phnumber: req.body.phnumber || hospital.phnumber,
       weblink:req.body.weblink || hospital.weblink,
       specialist:req.body.specialist || hospital.specialist,
-
+      phnumber1:req.body.phnumber1 || hospital.phnumber1,
+      phnumber2:req.body.phnumber2 || hospital.phnumber2,
+      phnumber3:req.body.phnumber3 || hospital.phnumber3,
+      phnumber4:req.body.phnumber4 || hospital.phnumber4,
+      phnumber5:req.body.phnumber5 || hospital.phnumber5,
+      phnumber6:req.body.phnumber6 || hospital.phnumber6,
+      phnumber7:req.body.phnumber7 || hospital.phnumber7,
+      phnumber8:req.body.phnumber8 || hospital.phnumber8,
+      phnumber9:req.body.phnumber9 || hospital.phnumber9,
+      phnumber10:req.body.phnumber10 || hospital.phnumber10,
+     
       state:req.body.state || hospital.state,
       district:req.body.district || hospital.district,
       near:req.body.near || hospital.district,
@@ -263,10 +273,11 @@ router.put("/ambulances/:id",async (req, res, next) => {
   try {
     let hospital = await Hospital.findById(req.params.id);
     // Delete image from cloudinary
-   
+  
 
 
     const data = {
+
       phnumber1: req.body.phnumber1 || hospital.phnumber1,
       phnumber2: req.body.phnumber2 || hospital.phnumber2,
       phnumber3: req.body.phnumber3 || hospital.phnumber3,
@@ -278,7 +289,6 @@ router.put("/ambulances/:id",async (req, res, next) => {
       phnumber9: req.body.phnumber9 || hospital.phnumber9,
       phnumber10: req.body.phnumber10 || hospital.phnumber10,
 
-      
     };
     hospital = await Hospital.findByIdAndUpdate(req.params.id, data, { new: true });
     res.json(hospital);
@@ -287,31 +297,7 @@ router.put("/ambulances/:id",async (req, res, next) => {
   }
 });
 
-router.post("/addambulances/:id",async (req, res, next) => {
-  try {
-    // Upload image to cloudinary
-    
-    // Create new hospital
-    let hospital = new Hospital({
-      phnumber1: req.body.phnumber1,
-      phnumber2: req.body.phnumber2,
-      phnumber3: req.body.phnumber3,
-      phnumber4: req.body.phnumber4,
-      phnumber5: req.body.phnumber5,
-      phnumber6: req.body.phnumber6,
-      phnumber7: req.body.phnumber7,
-      phnumber8: req.body.phnumber8,
-      phnumber9: req.body.phnumber9,
-      phnumber10: req.body.phnumber10,
-      
-    });
-    // Save hospital
-    await hospital.save();
-    res.json(hospital);
-  } catch (err) {
-    console.log(err);
-  }
-});
+
 
 
 router.post("/:id",async (req, res) => {
@@ -413,4 +399,39 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
+router.post("/beds/:id",async (req, res) => {
+  try {
+    let hospital = await Hospital.findById(req.params.id);
+    console.log(req.body.name)
+
+    const newUser = {
+      
+      name: req.body.name,
+     contactnumber:req.body.contactnumber,
+      address:req.body.address,
+      age:req.body.age,
+      charge:req.body.charge,
+    state:req.body.state,
+    district:req.body.district,
+   bedtype:req.body.bedtype,
+      
+  }
+
+
+    hospital.generalbedsarr.push(newUser);
+    await hospital.save();
+    res.status(200).json({
+      success: true,
+      message: "Review added successfully.",
+      hospital,
+      newUser
+      
+  });
+  } catch (err) {
+    console.log(err);
+  }
+
+  
+});
 module.exports = router;

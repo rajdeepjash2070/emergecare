@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import "./Home.css"
 const Home = () => {
+  const id=useParams().id;
   const [hospitals, sethospitals] = useState();
   const [stxt,setstxt]=useState('');
   useEffect(() => {
@@ -29,16 +31,53 @@ const Home = () => {
   };
   return (
     <div>
-    <div className="post-section" style={{marginLeft:"600px",marginTop:"30px"}}>
+     <header class="header">
+<Link className="btn btn-primary m-2" to={`/dashboard/${id}`} >
+                Dashboard
+              </Link>
+              {/* <Link className="btn btn-primary m-2" to={`/patientdetails/${id}`} >
+                GO TO YOUR DASHBOARD
+              </Link> */}
+            
+              <Link className="btn btn-primary m-2" to={`/login`} >
+                Log Out
+              </Link>
+    <div class="search-form">
+      <form action="">
+        <input
+          type="search"
+          name=""
+          id="search-box"
+          placeholder="search here..."
+        />
+        <label for="search-box">
+          <ion-icon name="search-outline"></ion-icon>
+        </label>
+      </form>
+    </div>
+
+    <div class="shopping-cart">
+      <h2>No products in the cart.</h2>
+  </div>
+
+    <div class="login-form">
+      <form action="">
+        <h3>Login Now</h3>
+        <input type="email" name="" placeholder="UserName" />
+        <input type="password" name="" placeholder="Password" />
+        <p>forgot your password? <a href="#">click here</a></p>
+        <p>Don't have an account! <a href="#">create now</a></p>
+        <input type="submit" value="Login Now" class="btn" />
+      </form>
+    </div>
+  </header>
+    <div className="post-section" style={{marginLeft:"600px",marginTop:"100px"}}>
    <form className="home-searchcontainer">
 <input placeholder="Search by District or State" type="text" name="text" onChange={event=>{setstxt(event.target.value)}}/>
 
    </form>
     </div>
-    <div className="post-section" style={{ maxWidth: 200, margin: "auto" }}>
-    
    
-    </div>
     <div className="row">
       {hospitals && hospitals.filter((hospital)=>{
               if(stxt===""){
@@ -71,6 +110,8 @@ const Home = () => {
           <p className="weblink"><a href={hospital.weblink}>GO TO THE Website</a></p>
           <p class="card-text">State: {hospital.state}</p>
           <p class="card-text">District: {hospital.district}</p>
+          <p className="card-text" style={{backgroundColor:"red",color:"white"}}>Number of Doctors: {hospital.doctor}</p>
+          <p className="card-text" style={{backgroundColor:"red",color:"white"}}>Total Beds: {hospital.generalbeds}</p>
           <p className="weblink"><a href={`/hospitalprofile/${hospital._id}`}>GO TO THE Profile</a></p>
           
               

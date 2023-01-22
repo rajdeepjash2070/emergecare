@@ -79,3 +79,15 @@ background-color: rgb(124, 0, 201);
 .f-social-links i{
     margin: 10px;
 }
+.dashboard a{
+    background-color: #ff4876;
+    color: white;
+    font-size: 20px;
+}
+.logout a{
+    background-color: #9a48ff;
+    color: white;
+    font-size: 20px;
+    margin-left: 500px;
+    margin-top: -100px;
+}

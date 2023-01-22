@@ -77,6 +77,16 @@ const appointmentSchema= new mongoose.Schema(
     symptoms5:{type:String},
   }
 );
+const bedsSchema=new mongoose.Schema(
+  {
+    hospitalname:{type:String},
+    date:{type:String}, 
+    charge:{type:String},
+    address:{type:String},
+    contactnumber:{type:String},
+    bedtype:{type:String},
+  }
+);
 const UserSchema = new mongoose.Schema(
   {
     userid:{type:String},
@@ -86,6 +96,7 @@ const UserSchema = new mongoose.Schema(
     email:{type:String},
     phnumber:{type:String},
     gender:{type:String},
+    bedsarr:[bedsSchema],
     appointment:[appointmentSchema],
     symptoms:[symptomsSchema],
     disease:[diseaseSchema],

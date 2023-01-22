@@ -25,7 +25,9 @@ import Hospitalprofile from './Components/Hospitalprofile';
 import Beds from './Components/Beds';
 import Ambulances from './Components/Ambulances';
 import Doctors from "./Components/Doctors"
-
+import Bookbed from './Components/Bookbed';
+import Success from './Components/Success';
+import Userdashboard from './Components/Userdashboard';
 function App() {
   return (
     <div className="App">
@@ -55,6 +57,9 @@ function App() {
               <Route path="/beds/:id" element={<Beds/>}/>
               <Route path="/ambulances/:id" element={<Ambulances/>}/>
               <Route path="/doctors/:id" element={<Doctors/>}/>
+              <Route path="/bookbed/:id" element={<Bookbed/>}/>
+              <Route path="/dashboard/:id" element={<Userdashboard/>}/>
+              <Route path="/success" element={<Success/>}/>
               <Route path="/bookdoctorappointment" element={<Bookdoctorappointment/>}/>
             </Routes>
             </Router>

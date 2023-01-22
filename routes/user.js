@@ -47,50 +47,28 @@ router.post("/register", async (req, res) => {
 
 
   
-  router.post("/:id",async (req, res) => {
+  router.post("/userbookbed/:id",async (req, res) => {
     try {
       let user = await User.findById(req.params.id);
       console.log(req.params.id);
-      // Delete image from cloudinary
-      
-    /* const{id,
-      fname,lname,email,age,gender,symptoms1,symptoms2,symptoms3,symptoms4,symptoms5,symptoms6,symptoms7,symptoms8,symptoms9,symptoms10,
-      symptoms11,symptoms12,symptoms13,symptoms14,symptoms15,symptoms16,symptoms17,symptoms18,symptoms19,symptoms20,
-      height,ctnumber,
-      address,
-      weight,
-      state,
-      district,
-      pin,
-      bp,
-      sugerlevel,
-      timeslot,
-      payment,
-      refferedhospitals,comment,
-      password}=req.body;*/
-  
-      const newAppointment = {
-        doctername:req.body.doctername,
-         time:req.body.time,
-         appointmentdate:req.body.appointmentdate,
-         fees:req.body.fees,
+     
+      const newUser = {
+         hospitalname:req.body.hospitalname,
+         date:req.body.date,
+         charge:req.body.charge,
          address:req.body.address,
-         contactnumber:req.body.ctnumber,
-         symptoms1:req.body.symptoms1,
-         symptoms2:req.body.symptoms2,
-         symptoms3:req.body.symptoms3,
-         symptoms4:req.body.symptoms4,
-         symptoms5:req.body.symptoms5,
+         contactnumber:req.body.contactnumber,
+         bedtype:req.body.bedtype,
     }
   
-  console.log(req.body.doctername)
-      user.appointment.push(newAppointment);
+  console.log(req.body.hospitalname)
+      user.bedsarr.push(newUser);
       await user.save();
       res.status(200).json({
         success: true,
         message: "Appointment added successfully.",
         user,
-        newAppointment
+        newUser
         
     });
     } catch (err) {
