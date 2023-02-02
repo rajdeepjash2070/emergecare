@@ -38,7 +38,9 @@ const Home = () => {
               {/* <Link className="btn btn-primary m-2" to={`/patientdetails/${id}`} >
                 GO TO YOUR DASHBOARD
               </Link> */}
-            
+              <Link className="btn btn-primary m-2" to={`/emergency/${id}`} >
+                Emergency
+              </Link>
               <Link className="btn btn-primary m-2" to={`/login`} >
                 Log Out
               </Link>
@@ -103,7 +105,7 @@ const Home = () => {
         <div class="card-body">
           
         <h4 className="card-title" style={{color:"blue"}}>Hospital Name: {hospital.name}</h4>
-        <h4 className="card-title">Hospital ID: {hospital._id}</h4>
+       
        
         <p class="card-text">Hospital Contact Number: {hospital.phnumber}</p>
           <p class="card-text">Hospital Address: {hospital.address}</p>

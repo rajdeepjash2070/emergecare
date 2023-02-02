@@ -28,6 +28,7 @@ import Doctors from "./Components/Doctors"
 import Bookbed from './Components/Bookbed';
 import Success from './Components/Success';
 import Userdashboard from './Components/Userdashboard';
+import Emergency from './Components/Emergency';
 function App() {
   return (
     <div className="App">
@@ -59,6 +60,7 @@ function App() {
               <Route path="/doctors/:id" element={<Doctors/>}/>
               <Route path="/bookbed/:id" element={<Bookbed/>}/>
               <Route path="/dashboard/:id" element={<Userdashboard/>}/>
+              <Route path="/emergency/:id" element={<Emergency/>}/>
               <Route path="/success" element={<Success/>}/>
               <Route path="/bookdoctorappointment" element={<Bookdoctorappointment/>}/>
             </Routes>

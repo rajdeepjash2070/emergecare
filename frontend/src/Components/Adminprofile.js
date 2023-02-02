@@ -105,8 +105,11 @@ const Adminprofile = () => {
       </form>
     </div>
   </header>
+
 {/*Home Section*/}
   <section class="home-section section" id="home-section">
+  <h1 className='text-center'>Hospital ID: {inputs._id}</h1>
+  <h2 className='text-center'>Password: {inputs.password}</h2>
     <div class="container grid grid-two-col">
       <div class="home-data">
         <h1>Hospital Name: {inputs.name}</h1>

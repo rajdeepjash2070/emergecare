@@ -338,12 +338,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
   try {
     let hospital = await Hospital.findById(req.params.id);
     // Delete image from cloudinary
-    await cloudinary.uploader.destroy(hospital.cloudinary_id);
-    // Upload image to cloudinary
-    let result;
-    if (req.file) {
-      result = await cloudinary.uploader.upload(req.file.path);
-    }
+   
 
 
     const data = {
