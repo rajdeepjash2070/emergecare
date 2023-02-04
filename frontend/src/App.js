@@ -29,6 +29,8 @@ import Bookbed from './Components/Bookbed';
 import Success from './Components/Success';
 import Userdashboard from './Components/Userdashboard';
 import Emergency from './Components/Emergency';
+import Emergecarehome from './Components/Emergecarehome';
+
 function App() {
   return (
     <div className="App">
@@ -39,6 +41,8 @@ function App() {
        <Routes>
               <Route path="/home/:id" element={<Home/>}/>
               <Route path="/register" element={<Register/>}/>
+          
+              <Route path="/" element={<Emergecarehome/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/userprofile/:id" element={<Userprofile/>}/>
               <Route path="/docterprofile/:id" element={<Docterprofile/>}/>

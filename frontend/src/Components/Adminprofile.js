@@ -108,9 +108,9 @@ const Adminprofile = () => {
 
 {/*Home Section*/}
   <section class="home-section section" id="home-section">
-  <h1 className='text-center'>Hospital ID: {inputs._id}</h1>
+  <h2 className='text-center'>Hospital ID: {inputs._id}</h2>
   <h2 className='text-center'>Password: {inputs.password}</h2>
-    <div class="container grid grid-two-col">
+    <div class="container grid grid-two-col" style={{marginTop:"60px"}}>
       <div class="home-data">
         <h1>Hospital Name: {inputs.name}</h1>
         <p>
@@ -167,7 +167,7 @@ const Adminprofile = () => {
  <section className='facilities'>
 
  <h1 className='text-center' style={{marginBottom:"50px"}}>Facilities</h1>
-<a href={`/adminambulances/${inputs._id}`} style={{marginLeft:"270px",fontSize:"25px"}}>Ambulances</a>
+<a href={`/adminambulances/${inputs._id}`} style={{marginLeft:"130px",fontSize:"25px"}}>Ambulances</a>
 <a href={`/admindoctors/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Doctors</a>
 <a href={`/adminbeds/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Beds</a>
 <a href={`/adminreviews/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Reviews</a>

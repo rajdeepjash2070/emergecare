@@ -63,11 +63,18 @@ const Hospitalprofile = () => {
     <div>
 
 <header class="header">
+<Link className="btn btn-primary m-2 navberlinks" to={`/ambulances/${inputs._id}`} style={{borderRadius:"60px"}}><i class="fa-sharp fa-solid fa-truck-medical"></i> Ambulances
+ </Link>
 
-<a href={`/ambulances/${inputs._id}`} style={{marginLeft:"270px",fontSize:"25px"}}>Ambulances</a>
-<a href={`/doctors/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Doctors</a>
-<a href={`/beds/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Beds</a>
-<a href={`/reviews/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Reviews</a>
+ <Link className="btn btn-primary m-2 navberlinks" to={`/doctors/${inputs._id}`} style={{borderRadius:"60px"}}><i class="fa-solid fa-user-doctor"></i> Doctors
+ </Link>
+
+ <Link className="btn btn-primary m-2 navberlinks" to={`/beds/${inputs._id}`} style={{borderRadius:"60px"}}><i class="fa-solid fa-bed-pulse"></i> Beds
+ </Link>
+
+ <Link className="btn btn-primary m-2 navberlinks" to={`/reviews/${inputs._id}`} style={{borderRadius:"60px"}}><i class="fa-solid fa-star-sharp"></i> Reviews
+ </Link>
+
     <div class="search-form">
       <form action="">
         <input
@@ -156,7 +163,7 @@ const Hospitalprofile = () => {
  <section className='facilities'>
 
  <h1 className='text-center' style={{marginBottom:"50px"}}>Facilities</h1>
-<a href={`/ambulances/${inputs._id}`} style={{marginLeft:"270px",fontSize:"25px"}}>Ambulances</a>
+<a href={`/ambulances/${inputs._id}`} style={{marginLeft:"130px",fontSize:"25px"}}>Ambulances</a>
 <a href={`/doctors/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Doctors</a>
 <a href={`/beds/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Beds</a>
 <a href={`/reviews/${inputs._id}`}  style={{marginLeft:"50px",fontSize:"25px"}}>Reviews</a>

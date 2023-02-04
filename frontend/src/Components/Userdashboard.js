@@ -10,7 +10,7 @@ import haversine from 'haversine-distance'
 import { Link } from "react-router-dom";
 import Buttonclick from "./button-click.wav"
 import useSound from 'use-sound';
-
+import Userprofileimg from "./Userprofileimg.png"
 
 const Userdashboard = () => {
    
@@ -38,21 +38,52 @@ const [audio]=useSound(Buttonclick);
 
 
 <div class="container">
-<h1>Your ID: {id}</h1>
+<header class="header">
+
+<a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <span className='mt-2'>Hi, User</span></a>
+
+<nav class="navbar">
+    <a href={`/home/${id}`}>home</a>
+    <a href="#about">about</a>
+    <a href="#review">review</a>
+    <a href="#blogs">blogs</a>
+</nav>
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+<h2 className='text-center' style={{marginTop:"120px"}}>Hey {inputs.name} Your ID is: {id}</h2>
+
+<li class="nav-item dropdown" style={{height:"50px",width:"170px",marginLeft:"-100px",marginTop:"-50px"}}>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:"white"}}> <i class="fa-solid fa-notes-medical" style={{fontSize:"25px"}}></i> Navigate to
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style={{width:"130px"}}>
+          <a class="dropdown-item text-center mt-2" href={`/home/${id}`} style={{marginLeft:"0px"}}>Home</a>
+          <a class="dropdown-item text-center mt-2" href={`/emergency/${id}`} style={{marginLeft:"0px"}}>Emergency</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-center mt-2" href="#" style={{marginLeft:"0px"}}>About</a>
+          <a class="dropdown-item text-center mt-2" href="#" style={{marginLeft:"0px"}}>Contact</a>
+        </div>
+      </li>
+
+     
 <div>
   <div>
       <div>
+      <hr/>
           <div className='row mt-4'>
-              <a href="#" style={{fontSize:"200px",backgroundColor:"pink",borderRadius:"15px",boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 90px"}}>
-              <h1 className='text-center mt-4'>{inputs.name}</h1>
-              <p className='text-center mt-4' style={{fontSize:"35px",color:"black"}}>Email- {inputs.email}</p>
-              <p className='text-center mt-4' style={{fontSize:"35px",color:"black"}}> Password- {inputs.password}</p>
-
-              <div className="col-md-6" style={{marginTop:"-200px"}}>
-              <i class="fa-solid fa-user"></i>
+       
+          <div className="col-md-6">
+              <img src={Userprofileimg}/>
               </div>
+              <div className='col-md-6' style={{marginTop:"100px"}}>
+              <h1 className='text-lefts mt-4'>{inputs.name}</h1>
+              <p className='text-left mt-4' style={{fontSize:"18px",color:"black"}}>Email- {inputs.email}</p>
+              <p className='text-left mt-4' style={{fontSize:"18px",color:"black"}}>Address- {inputs.address}</p>
+</div>
+              
                   {/* <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""/> */}
-              </a>
+           
               
               
           </div>

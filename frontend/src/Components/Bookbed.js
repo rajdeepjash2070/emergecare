@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 
  import axios from "axios"
- import { useNavigate,useParams } from 'react-router-dom'
+ import { useNavigate,useParams,Link } from 'react-router-dom'
 
  const Bookbed = () => {
     const id=useParams().id;
@@ -122,10 +122,6 @@ import React, { useState,useEffect } from 'react'
      <div>
         
         <h1  className='text-center bg-warning text-white'>Fill the form with Accurate Details of Your Hospital</h1>
-        <h3 id='htag' className='text-center bg-danger text-white'>Your Details can Save a Pateint's Life and also Wrong Details can Finish a pateint's Life </h3>
-
-    
-
          <form className='p-4 form-container' onSubmit={handleSubmit}>
         
    <div class="mb-3">
@@ -178,11 +174,7 @@ import React, { useState,useEffect } from 'react'
             </select>
   </div>
     
-   {/* state , district,emergencymedicinekit,oxygencylider, description, numberofambulance,numberoficu,ot,bloodbank,covidbeds,denguebeds,malariabeds,plasmabank,numberofbeds */}
-   <div class="mb-3 form-check">
-     <input type="checkbox" checked={checked} onChange={()=>setChecked(!checked)} value={inputs.available} class="form-check-input" id="exampleCheck1"/>
-     <label class="form-check-label" for="exampleCheck1">Beds Avialable or Not</label>
-   </div>
+   
    <button type="submit" class="btn btn-primary">Submit</button>
  </form>
         
